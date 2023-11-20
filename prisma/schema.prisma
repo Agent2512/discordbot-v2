@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// discord bot 
+
+model guild {
+  id String @id
+
+  category category[]
+}
+
+model category {
+  id      String @id
+  guildId String
+  guild   guild  @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  makerChannel makerChannel[]
+  sunChannel   sunChannel[]
+}
+
+model makerChannel {
+  id         String   @id
+  categoryId String
+  category   category @relation(fields: [categoryId], references: [id])
+}
+
+model sunChannel {
+  id         String   @id
+  categoryId String
+  category   category @relation(fields: [categoryId], references: [id])
+}
