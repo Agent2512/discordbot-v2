@@ -9,8 +9,18 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@prisma/client": "5.6.0",
     "discord.js": "^14.14.1",
     "glob": "^10.3.10",
     "prisma": "^5.6.0"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.ts",
+    "put": "bun run src/PUT.ts",
+    "db": "prisma db push && prisma generate",
+    "db:push": "prisma db push",
+    "db:gen": "prisma generate",
+    "db:s": "prisma studio"
   }
 }
