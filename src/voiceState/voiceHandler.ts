@@ -8,7 +8,6 @@ export const voiceHandler = async (oldState: VoiceState, newState: VoiceState) =
     // console.log("action:", action);
     // console.log("user:", username);
 
-
     if (action === "joins") {
 
     }

@@ -1,0 +1,1 @@
+when given the player XP with the "GivePlayerXP" function check if the guild has an "AFK channel" 

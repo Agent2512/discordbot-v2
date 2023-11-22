@@ -13,7 +13,7 @@ datasource db {
 // discord bot 
 
 // guild
-// if guild is deleted, remove all related data
 model guild {
-  id String @id
+  id           String  @id
+  afkChannelId String?
 }
